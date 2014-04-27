@@ -14,13 +14,8 @@ if (!require("reshape")) {
   install.packages("reshape")
 }
 
-if (!require("data.table")) {
-  install.packages("data.table")
-}
-
 #load required packages
 library("reshape")
-library("data.table")
 
 
 #read in data
@@ -41,7 +36,7 @@ activities <- rbind(testY, trainY)
 subjects <- rbind(subjectTest, subjectTrain)
 
 ##clean up R working space, delete items no longer needed
-rm(testY, trainY, subjectTest, subjectTrain, variables, fileUrl, folder, zipFile)
+rm(testY, trainY, subjectTest, subjectTrain, variables, folder)
 
 #label activities
 activities[,1] <- gsub(1, "WALKING", as.matrix(activities[,1]))
@@ -80,3 +75,8 @@ tidy <- cast(melted, subject + activity ~ variable, mean)
 
 ##write the tidy data to a file
 write.table(tidy, file= "tidy.txt")
+
+##read tidy data back in for evaluation
+backin <- read.table("tidy.txt")
+print(head(backin))
+print("Script is completed. Head from tidy.txt, as read back in, is printed above for review.")
