@@ -15,7 +15,7 @@ suppressWarnings(if (!require("reshape")) {
 })
 
 #load required packages
-library("reshape")
+suppressWarnings(library("reshape"))
 
 
 #read in data
