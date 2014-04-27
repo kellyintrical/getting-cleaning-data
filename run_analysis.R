@@ -1,5 +1,4 @@
-#first, checks if UCI HAR Dataset folder exists in WD. If not, pulls
-# the zip file from the link and unzips it
+#Check if UCI HAR Dataset folder exists in WD. If not, pull it in.
 folder <- "UCI HAR Dataset"
 if(!file.exists(folder)) {
   zipFile <- "src_data.zip"
@@ -7,12 +6,13 @@ if(!file.exists(folder)) {
   download.file(fileUrl, destfile=zipFile, method="curl")
   unzip(zipFile)
   file.remove(zipFile)
+  rm(zipFile, fileUrl)
 }
 
 #check for required packages, install if necessary
-if (!require("reshape")) {
+suppressWarnings(if (!require("reshape")) {
   install.packages("reshape")
-}
+})
 
 #load required packages
 library("reshape")
@@ -76,7 +76,5 @@ tidy <- cast(melted, subject + activity ~ variable, mean)
 ##write the tidy data to a file
 write.table(tidy, file= "tidy.txt")
 
-##read tidy data back in for evaluation
-backin <- read.table("tidy.txt")
-print(head(backin))
-print("Script is completed. Head from tidy.txt, as read back in, is printed above for review.")
+##print success statement
+print("Script complete. To check results, use read.table to read in 'tidy.txt'.")
