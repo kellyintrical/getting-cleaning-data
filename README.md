@@ -1,5 +1,7 @@
-Peer review assessment for Getting/Cleaning Data on Coursera
-===========================================================
+ Getting/Cleaning Data on Coursera
+===================================
+Peer review assessment
+-----------------------------------
 
 This R script will created a tidy dataset of data collected from the accelerometers from the Samsung Galaxy S smartphone.
 
