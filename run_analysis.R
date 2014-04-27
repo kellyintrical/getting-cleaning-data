@@ -76,7 +76,5 @@ tidy <- cast(melted, subject + activity ~ variable, mean)
 ##write the tidy data to a file
 write.table(tidy, file= "tidy.txt")
 
-##read tidy data back in for evaluation
-backin <- read.table("tidy.txt")
-print(head(backin))
-print("Script is completed. Head from tidy.txt, as read back in, is printed above for review.")
+##print success statement
+print("Script complete. To check results, use read.table to read in "tidy.txt" and view the head.)
