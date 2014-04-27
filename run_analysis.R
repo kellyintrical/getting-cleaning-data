@@ -77,4 +77,4 @@ tidy <- cast(melted, subject + activity ~ variable, mean)
 write.table(tidy, file= "tidy.txt")
 
 ##print success statement
-print("Script complete. To check results, use read.table to read in 'tidy.txt'.)
+print("Script complete. To check results, use read.table to read in 'tidy.txt'.")
