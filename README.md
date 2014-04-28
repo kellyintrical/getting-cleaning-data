@@ -9,3 +9,5 @@ The original data are located here: https://d396qusza40orc.cloudfront.net/getdat
 
 The R script will download the data, install required packages, read in the data, and manipulate it to print a tidy data set containing the average of each variable for each activity and each subject.
 
+For details on each step of the process, see the comments in the R script. 
+
