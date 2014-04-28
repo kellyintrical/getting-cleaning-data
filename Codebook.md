@@ -25,7 +25,7 @@ These signals were used to estimate variables of the feature vector for each pat
 
 ###Variables included in tidy data set:
 
-The code to create the tiny data set extracts the mean and sd measurements for each of the variables below.
+The code to create the tiny data set extracts the mean and sd measurements for each of the variables below. The units remain unchanged from the original dataset (see text above for details).
 
 * tBodyAcc-XYZ
 * tGravityAcc-XYZ
